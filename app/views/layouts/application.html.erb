@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyBlog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-nav">
+    <h1 class="header-nav-log"><%= link_to "玲辰书斋", posts_path %></h1>
+    <ul class="header-nav-menus">
+      <li class="header-nav-menus-item"><%= link_to "搜索" %></li>
+      <li class="header-nav-menus-item"><%= link_to "主页" %></li>
+      <li class="header-nav-menus-item"><%= link_to "标签" %></li>
+      <li class="header-nav-menus-item"><%= link_to "分类" %></li>
+      <li class="header-nav-menus-item"><%= link_to "关于笔者" %></li>
+    </ul>
+  </div>
+</header>
+
+
+<div>
+  <div class="main">
+    <%= turbo_frame_tag "header" do %>
+      <div class="header-site-info">
+        <div class="header-site-info-container">
+          <h1>Welcome To My Website</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, consequuntur?</p>
+        </div>
+      </div>
+      <div class="header-scroll-down"></div>
+      <%= yield %>
+    <% end %>
+  </div>
+  <div class="sidebar"></div>
+</div>
+<footer></footer>
+</body>
+</html>
