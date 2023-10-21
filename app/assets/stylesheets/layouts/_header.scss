@@ -5,33 +5,23 @@
 
   &-nav {
     display: flex;
-    top: 1em;
     left: 0;
     right: 0;
     position: fixed;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
     justify-content: space-around;
     align-items: center;
-
-    & > h1 > a {
-      color: var(--color-light);
-    }
+    padding: 1em 0;
 
     &-menus {
       display: flex;
+      gap: 1rem;
       list-style: none;
-
-      &-item {
-        margin-right: 1rem;
-
-        & > a {
-          color: var(--color-light);
-        }
-      }
     }
+  }
 
-    &-log {
-    }
+  &-nav.active {
+    background-color: var(--color-background);
   }
 
   &-site-info {
@@ -73,7 +63,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
   }
