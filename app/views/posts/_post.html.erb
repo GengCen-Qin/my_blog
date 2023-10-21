@@ -11,8 +11,15 @@
 
   <div class="post-detail">
     <p class="post-detail-content">
-      <%= post.content %>
+      <%= markdown(post.content) %>
     </p>
   </div>
+
+  <div>
+    <%= link_to "Edit post", edit_post_path, data: {turbo_frame: "_top"} %>
+  </div>
 <% end %>
+
+
+
 
