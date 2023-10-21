@@ -1,78 +1,46 @@
 .post {
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--space-s);
-  min-height: 10rem;
 
   background-color: var(--color-white);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-small);
-  margin-bottom: var(--space-m);
   padding: var(--space-l);
+  //margin-bottom: var(--space-m);
 
   &-desc {
     @extend .post;
-
     @include media(tabletAndUp) {
       padding: var(--space-xs) var(--space-m);
     }
-
-    &-title {
-      font-size: var(--font-size-xxl);
-    }
-
-    &-time {
-      opacity: 80%;
-    }
   }
 
-  &-detail {
-    @extend .post;
+  &-desc-title {
+    font-size: var(--font-size-xxl);
+  }
 
-    &-title {
-      text-align: center;
-      font-size: var(--font-size-xxxl);
-    }
-
-    &-time {
-      opacity: 80%;
-      text-align: center;
-    }
+  &-desc-time {
+    opacity: 80%;
   }
 
   &-detail-header {
     background-image: url('/post_header.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom center;
-    height: 40vh;
+    background-position: center center;
+    height: 38vh;
     color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
     margin-bottom: 20px;
     z-index: -2;
-
-    &-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-bottom: 3em;
-
-      & > h1 {
-        font-size: var(--font-size-xxxl);
-        color: var(--color-light);
-        padding-bottom: 1rem;
-      }
-
-      & > p {
-        font-size: var(--font-size-xl);
-        color: var(--color-light);
-      }
-    }
-
     &::before {
       content: '';
       position: absolute;
@@ -80,8 +48,22 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: inherit;
+      background-color: rgba(0, 0, 0, 0.5);;
       z-index: -1;
     }
+  }
+
+  &-detail-title {
+    text-align: center;
+    font-size: var(--font-size-xxxl);
+    color: var(--color-light);
+    padding-bottom: 1rem;
+  }
+
+  &-detail-time {
+    opacity: 80%;
+    text-align: center;
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
   }
 }

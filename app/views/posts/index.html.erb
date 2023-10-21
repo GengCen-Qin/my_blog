@@ -1,24 +1,63 @@
-<div class="container">
-  <div id="posts">
-    <% @posts.each do |post| %>
-      <div class="post-desc">
-        <p class="post-desc-title">
-          <%= link_to post.title, post_path(post), data: { turbo_frame: "header"} %>
-        </p>
-
-        <p class="post-desc-time">
-          <%= time_tag post.created_at %>
-        </p>
-
-        <p class="post-desc-content">
-          <%= truncate(strip_tags(post.content), length: 50) %>
-        </p>
+<div>
+  <div class="main">
+    <div class="header-site-info">
+      <div class="header-site-info-container">
+        <h1>Welcome To My Website</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, consequuntur?</p>
       </div>
-    <% end %>
+    </div>
+    <div class="header-scroll-down"></div>
+  </div>
+  <div class="sidebar"></div>
+</div>
+
+<div class="container">
+  <div class="container main">
+    <div id="posts" class="container-posts">
+      <% @posts.each do |post| %>
+        <div class="post-desc">
+          <p class="post-desc-title">
+            <%#= link_to post.title, post_path(post), data: { turbo_frame: "header"} %>
+            <%= link_to post.title, post_path(post), data: { turbo_frame: "_top" } %>
+          </p>
+
+          <p class="post-desc-time">
+            <%= time_tag post.created_at %>
+          </p>
+
+          <p class="post-desc-content">
+            <%= truncate(strip_tags(post.content), length: 50) %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="container-sidebar">
+      <div class="container-sidebar-item">
+        总结信息
+      </div>
+
+      <div class="container-sidebar-item">
+        最新文章
+      </div>
+
+      <div class="container-sidebar-item">
+        分类
+      </div>
+
+      <div class="container-sidebar-item">
+        标签
+      </div>
+
+      <div class="container-sidebar-item">
+        归档
+      </div>
+
+      <div class="container-sidebar-item">
+        网站资讯
+      </div>
+    </div>
   </div>
 </div>
 
-<!--    <p>-->
-<%#= link_to "Show this post", post %>
-<!--    </p>-->
-<%#= link_to "New post", new_post_path %>
+

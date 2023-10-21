@@ -1,5 +1,6 @@
 .CodeRay {
     border: 1px solid silver;
+    border-radius: var(--border-radius);
 }
 
 .CodeRay pre {
@@ -66,8 +67,6 @@ table.CodeRay td {
 
 .CodeRay .code {
     width: 100%;
-    background-color: var(--color-dark);
-    color: var(--color-light);
 }
 
 .CodeRay .debug {
