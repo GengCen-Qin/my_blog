@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
+gem "pagy"
+
+# 日期格式化
 gem 'local_time'
 
 # Markdown转化

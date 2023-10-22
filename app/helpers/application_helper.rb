@@ -1,4 +1,7 @@
 module ApplicationHelper
+  include Pagy::Frontend
+  require 'pagy/extras/foundation'
+
   def markdown(text)
     options = {
       :autolink => true,

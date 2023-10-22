@@ -3,7 +3,8 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @pagy, @records = pagy(Post.all)
+
     @top_posts = Post.limit(5)
   end
 

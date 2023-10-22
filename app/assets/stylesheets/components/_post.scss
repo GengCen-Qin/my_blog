@@ -14,7 +14,7 @@
   &-desc {
     @extend .post;
     @include media(tabletAndUp) {
-      padding: var(--space-xs) var(--space-m);
+      padding: var(--space-xxl) var(--space-xxl);
     }
   }
 
