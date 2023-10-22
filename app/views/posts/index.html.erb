@@ -17,7 +17,6 @@
       <% @posts.each do |post| %>
         <div class="post-desc">
           <p class="post-desc-title">
-            <%#= link_to post.title, post_path(post), data: { turbo_frame: "header"} %>
             <%= link_to post.title, post_path(post), data: { turbo_frame: "_top" } %>
           </p>
 
@@ -60,7 +59,16 @@
       </div>
 
       <div class="container-sidebar-item">
-        最新文章
+        <% @top_posts.each do |post| %>
+          <div class="post-sidebar">
+            <p class="post-sidebar-title">
+              <%= link_to post.title, post_path(post), data: { turbo_frame: "_top" } %>
+            </p>
+            <p class="post-sidebar-time">
+              <%= time_tag post.created_at %>
+            </p>
+          </div>
+        <% end %>
       </div>
 
       <div class="container-sidebar-item">

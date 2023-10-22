@@ -66,4 +66,18 @@
     font-size: var(--font-size-xl);
     color: var(--color-white);
   }
+
+  &-sidebar {
+    line-height: var(--line-height-body);
+    border-bottom: 1px solid gray;
+    text-align: center;
+  }
+
+  &-sidebar-title {
+    font-size: var(--font-size-l);
+  }
+
+  &-sidebar-time {
+    
+  }
 }
