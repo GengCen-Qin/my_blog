@@ -21,7 +21,7 @@
           </p>
 
           <p class="post-desc-time">
-            <%= time_tag post.created_at %>
+            <%= time_tag post.created_at,"data-local":"time-ago" %>
           </p>
 
           <p class="post-desc-content">
@@ -65,7 +65,7 @@
               <%= link_to post.title, post_path(post), data: { turbo_frame: "_top" } %>
             </p>
             <p class="post-sidebar-time">
-              <%= time_tag post.created_at %>
+              <%= time_tag post.created_at,"data-local":"time-ago" %>
             </p>
           </div>
         <% end %>

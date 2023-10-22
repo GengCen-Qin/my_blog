@@ -3,8 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
-gem 'redcarpet'
+gem 'local_time'
 
+# Markdown转化
+gem 'redcarpet'
+# Markdown高亮
 gem 'coderay'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

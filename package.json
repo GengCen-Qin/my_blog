@@ -5,6 +5,7 @@
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^7.3.0",
     "esbuild": "^0.19.4",
+    "local-time": "^2.1.0",
     "sass": "^1.69.3"
   },
   "scripts": {
