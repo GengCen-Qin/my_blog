@@ -8,7 +8,6 @@
     </div>
     <div class="header-scroll-down"></div>
   </div>
-  <div class="sidebar"></div>
 </div>
 
 <div class="container">
@@ -21,7 +20,7 @@
           </p>
 
           <p class="post-desc-time">
-            <%= time_tag post.created_at, "data-local": "time-ago" %>
+            <%= local_time(post.created_at, '%Y-%M-%e %l:%M%P') %>
           </p>
 
           <p class="post-desc-content">
@@ -63,6 +62,7 @@
       </div>
 
       <div class="container-sidebar-item">
+        <div class="container-sidebar-item-title"><i class="fas fa-history" style="margin-right: 5px"></i>最近文章</div>
         <% @top_posts.each do |post| %>
           <div class="post-sidebar">
             <p class="post-sidebar-title">
@@ -76,19 +76,26 @@
       </div>
 
       <div class="container-sidebar-item">
-        分类
+        <div class="container-sidebar-item-title"><i class="fas fa-folder-open" style="margin-right: 5px"></i>分类</div>
       </div>
 
       <div class="container-sidebar-item">
-        标签
+        <div class="container-sidebar-item-title"><i class="fas fa-tags" style="margin-right: 5px"></i>标签</div>
+        <div class="container-sidebar-item-tags">
+          <% @tags.each do |tag| %>
+            <span><%= link_to tag.name, tag %></span>
+          <% end %>
+        </div>
       </div>
 
       <div class="container-sidebar-item">
-        归档
+        <div class="container-sidebar-item-title"><i class="fas fa-archive" style="margin-right: 5px"></i>归档</div>
       </div>
 
       <div class="container-sidebar-item">
-        网站资讯
+        <div class="container-sidebar-item-title"><i class="fas fa-chart-line" style="margin-right: 5px"></i>网站资讯
+        </div>
+
       </div>
     </div>
   </div>

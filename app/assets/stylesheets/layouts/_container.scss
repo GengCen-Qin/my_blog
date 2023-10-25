@@ -48,7 +48,18 @@
     align-items: center;
     font-size: var(--font-size-s);
     gap: 2em;
-    padding: var(--space-m) 0;
+    padding: var(--space-m) var(--space-m);
+  }
+
+  &-sidebar-item-title {
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+  }
+
+  &-sidebar-item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
   }
 
   &-sidebar-pic{

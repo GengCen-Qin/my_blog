@@ -9,7 +9,7 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-small);
   padding: var(--space-l);
-  //margin-bottom: var(--space-m);
+  margin: 0 var(--space-xxxxl);
 
   &-desc {
     @extend .post;
@@ -41,6 +41,7 @@
     position: relative;
     margin-bottom: 20px;
     z-index: -2;
+    justify-self: flex-start;
     &::before {
       content: '';
       position: absolute;
@@ -79,5 +80,21 @@
 
   &-sidebar-time {
 
+  }
+
+  &-list {
+    @extend .post;
+    padding: var(--space-l);
+    margin: 0 var(--space-xxxxl);
+    display: flex;
+    gap: var(--space-l);
+    height: 45vh;
+  }
+
+  &-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-xl);
   }
 }

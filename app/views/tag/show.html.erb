@@ -1,0 +1,22 @@
+<div class="post-detail-header">
+  <h1 class="post-detail-title" style="color: white"><%= @tag.name %></h1>
+</div>
+
+<div class="post-list">
+  <% @posts.each do |post| %>
+    <div class="post-item">
+      <div>
+        <i class="far fa-newspaper" style="font-size: 30px"></i>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: space-around">
+        <%= local_time(post.created_at, '%Y-%M-%e %l:%M%P') %>
+        <%= link_to post.title, post %>
+      </div>
+    </div>
+  <% end %>
+
+  <div style="text-align: center; padding-top: 3em">
+    <%== pagy_foundation_nav(@pagy) %>
+  </div>
+</div>
