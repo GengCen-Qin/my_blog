@@ -43,19 +43,19 @@
         <div class="container-sidebar-counter">
           <div class="container-sidebar-counter_item">
             <i class="fas fa-book fa-2x"></i>
-            <div class="counter" data-target="12000">53</div>
+            <div class="counter">53</div>
             <span>文章</span>
           </div>
 
           <div class="container-sidebar-counter_item">
             <i class="fas fa-tags fa-2x"></i>
-            <div class="counter" data-target="12000">46</div>
+            <div class="counter">46</div>
             <span>标签</span>
           </div>
 
           <div class="container-sidebar-counter_item">
             <i class="fas fa-th-large fa-2x"></i>
-            <div class="counter" data-target="12000">15</div>
+            <div class="counter">15</div>
             <span>分类</span>
           </div>
         </div>
@@ -80,6 +80,12 @@
 
       <div class="container-sidebar-item">
         <div class="container-sidebar-item-title"><i class="fas fa-folder-open" style="margin-right: 5px"></i>分类</div>
+        <% @categories.each do |category| %>
+          <div class="container-sidebar-item-category">
+            <span style="width: 15em;"><%= link_to category.name, category, style: 'text-align: left;' %></span>
+            <span style="text-align: right;  "><%= category.posts.count %></span>
+          </div>
+        <% end %>
       </div>
 
       <div class="container-sidebar-item">

@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @tags = Tag.all
     @pagy, @records = pagy(Post.all)
     @top_posts = Post.limit(5)
+    @categories = Category.limit(5)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -60,13 +61,14 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:title, :content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def post_params
+    params.require(:post).permit(:title, :content)
+  end
 end
