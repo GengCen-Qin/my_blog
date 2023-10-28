@@ -20,7 +20,7 @@
           </p>
 
           <p class="post-desc-time">
-            <%= local_time(post.created_at, '%Y-%M-%e %l:%M%P') %>
+            <%= local_time(post.created_at, '%Y-%M-%e %l:%M') %>
           </p>
 
           <p class="post-desc-content">
@@ -63,16 +63,19 @@
 
       <div class="container-sidebar-item">
         <div class="container-sidebar-item-title"><i class="fas fa-history" style="margin-right: 5px"></i>最近文章</div>
-        <% @top_posts.each do |post| %>
-          <div class="post-sidebar">
-            <p class="post-sidebar-title">
-              <%= link_to post.title, post_path(post), data: { turbo_frame: "_top" } %>
-            </p>
-            <p class="post-sidebar-time">
-              <%= time_tag post.created_at, "data-local": "time-ago" %>
-            </p>
-          </div>
-        <% end %>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1em">
+          <% @top_posts.each do |post| %>
+            <div class="post-sidebar">
+              <p class="post-sidebar-title">
+                <%= link_to post.title, post_path(post), data: { turbo_frame: "_top" } %>
+              </p>
+              <p class="post-sidebar-time">
+                <%= local_time(post.created_at, '%Y-%M-%e %l:%M') %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+
       </div>
 
       <div class="container-sidebar-item">

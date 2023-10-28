@@ -9,12 +9,11 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-small);
   padding: var(--space-l);
-  margin: 0 var(--space-xxxxl);
+  margin: 0 var(--space-s);
 
   &-desc {
     @extend .post;
     @include media(tabletAndUp) {
-      padding: var(--space-xxl) var(--space-xxl);
     }
   }
 
@@ -70,12 +69,13 @@
 
   &-sidebar {
     line-height: var(--line-height-body);
-    border-bottom: 1px solid gray;
-    text-align: center;
+    text-align: left;
   }
 
   &-sidebar-title {
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
+    font-weight: bold;
+    margin-bottom: var(--space-xs);
   }
 
   &-sidebar-time {
