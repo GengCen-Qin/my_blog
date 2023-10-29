@@ -24,7 +24,28 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
+    tm_post_params = params[:post]
+    tag_names = tm_post_params[:tag_names]
+    category_name = tm_post_params[:category_name]
+    tm_post_params.delete(:tag_names)
+    tm_post_params.delete(:category_name)
+
     @post = Post.new(post_params)
+
+    if category_name.to_s.present?
+      category = Category.find_by_name(category_name.to_s)
+      category = Category.create!(name: category_name.to_s) if category.nil?
+      @post.category = category
+    end
+
+    if tag_names.to_s.present?
+      tag_names = tag_names.to_s.split(",")
+      tag_names.each do |tag_name|
+        tag = Tag.find_by_name(tag_name)
+        tag = Tag.create!(name: tag_name) if tag.nil?
+        @post.tags << tag
+      end
+    end
 
     respond_to do |format|
       if @post.save
@@ -69,6 +90,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :created_at, :category_name, :tag_names)
   end
 end

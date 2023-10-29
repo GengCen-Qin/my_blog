@@ -13,12 +13,27 @@
     <% end %>
 
     <div>
-      <%= form.label :title, style: "display: block" %>
+      <%= form.label :标题, style: "display: block" %>
       <%= form.text_field :title %>
     </div>
 
     <div>
-      <%= form.label :content, style: "display: block" %>
+      <%= form.label :分类, style: "display: block" %>
+      <%= form.text_field :category_name %>
+    </div>
+
+    <div>
+      <%= form.label :标签, style: "display: block" %>
+      <%= form.text_field :tag_names %>
+    </div>
+
+    <div>
+      <%= form.label :创建时间, style: "display: block" %>
+      <%= form.datetime_local_field :created_at, { ampm: true } %>
+    </div>
+
+    <div>
+      <%= form.label :内容, style: "display: block" %>
       <%= form.text_area :content, size: "80x20" %>
     </div>
 
