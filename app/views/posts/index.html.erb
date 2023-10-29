@@ -43,19 +43,19 @@
         <div class="container-sidebar-counter">
           <div class="container-sidebar-counter_item">
             <i class="fas fa-book fa-2x"></i>
-            <div class="counter">53</div>
+            <div class="counter"><%= Post.count %></div>
             <span>文章</span>
           </div>
 
           <div class="container-sidebar-counter_item">
             <i class="fas fa-tags fa-2x"></i>
-            <div class="counter">46</div>
+            <div class="counter"><%= Tag.count %></div>
             <span>标签</span>
           </div>
 
           <div class="container-sidebar-counter_item">
             <i class="fas fa-th-large fa-2x"></i>
-            <div class="counter">15</div>
+            <div class="counter"><%= Category.count %></div>
             <span>分类</span>
           </div>
         </div>

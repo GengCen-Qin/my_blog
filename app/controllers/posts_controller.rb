@@ -3,10 +3,10 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @tags = Tag.all
     @pagy, @records = pagy(Post.all)
     @top_posts = Post.limit(5)
-    @categories = Category.limit(5)
+    @categories = Category.all.filter { |category| category.posts.count != 0 }
+    @tags = Tag.all.filter { |tag| tag.posts.count != 0 }
   end
 
   # GET /posts/1 or /posts/1.json
