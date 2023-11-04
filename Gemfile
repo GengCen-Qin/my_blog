@@ -5,6 +5,8 @@ ruby "3.2.2"
 
 gem "pagy"
 
+gem "config"
+
 # 日期格式化
 gem 'local_time'
 

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
 
   include Pagy::Backend
-  Pagy::DEFAULT[:items] = 2 # items per page
+  Pagy::DEFAULT[:items] = Settings.default.page_size # items per page
   Pagy::DEFAULT[:size] = [1, 4, 4, 1] # nav bar links
 
   def upload_file
