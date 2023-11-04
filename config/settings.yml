@@ -1,6 +1,8 @@
 default: &default
   page_size: 2
   introduce: 要么读书，要么旅行，身体和心灵总有一个要在路上.
+  page_title: 玲辰书斋
+  speed: 1
 
 development:
   <<: *default
