@@ -31,8 +31,8 @@
       <%= form.label :创建时间, style: "display: block" %>
       <%= form.datetime_local_field :created_at, { ampm: true } %>
     </div>
-
-    <div>
+<!--    data-controller="toggles" data-action="click->toggles#closeLayer"-->
+    <div data-controller="file-upload" data-action="drop->file-upload#upload">
       <%= form.label :内容, style: "display: block" %>
       <%= form.text_area :content, size: "80x20" %>
     </div>
