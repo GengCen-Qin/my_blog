@@ -52,11 +52,9 @@
   }
 
   &-sidebar-item-category {
-    width: 100%;
-
-    & > span {
-      display: inline-block;
-    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
   &-sidebar-item-title {

@@ -1,12 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
+  before_action :set_summary, only: :index
   # GET /posts or /posts.json
   def index
     @pagy, @records = pagy(Post.all)
-    @top_posts = Post.limit(5)
-    @categories = Category.all.filter { |category| category.posts.count != 0 }
-    @tags = Tag.all.filter { |tag| tag.posts.count != 0 }
   end
 
   # GET /posts/1 or /posts/1.json
@@ -100,6 +97,21 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def set_summary
+    @categories = Category.all.filter { |category| category.posts.count != 0 }
+    @tags = Tag.all.filter { |tag| tag.posts.count != 0 }
+    @top_posts = Post.limit(5)
+    @result = ActiveRecord::Base.connection.execute("SELECT
+        substr(created_at,1,4) as year,
+        substr(created_at,6,2) as month,
+        COUNT(*) as count
+    FROM posts
+    GROUP BY substr(created_at,1,4), substr(created_at,6,2);")
+    p @result
   end
 
   private

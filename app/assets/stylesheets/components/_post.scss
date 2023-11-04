@@ -13,16 +13,23 @@
 
   &-desc {
     @extend .post;
+    gap: var(--space-xxxs);
     @include media(tabletAndUp) {
     }
   }
 
   &-desc-title {
+    margin: 0;
     font-size: var(--font-size-xxl);
   }
 
   &-desc-time {
+    margin: 0;
     opacity: 80%;
+  }
+
+  &-desc-content {
+    margin: 0;
   }
 
   &-detail-header {

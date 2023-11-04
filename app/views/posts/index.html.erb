@@ -82,7 +82,7 @@
         <div class="container-sidebar-item-title"><i class="fas fa-folder-open" style="margin-right: 5px"></i>分类</div>
         <% @categories.each do |category| %>
           <div class="container-sidebar-item-category">
-            <span style="width: 15em;"><%= link_to category.name, category, style: 'text-align: left;' %></span>
+            <span style="width: 15em; font-weight: bold"><%= link_to category.name, category, style: 'text-align: left;' %></span>
             <span style="text-align: right;  "><%= category.posts.count %></span>
           </div>
         <% end %>
@@ -92,13 +92,22 @@
         <div class="container-sidebar-item-title"><i class="fas fa-tags" style="margin-right: 5px"></i>标签</div>
         <div class="container-sidebar-item-tags">
           <% @tags.each do |tag| %>
-            <span><%= link_to tag.name, tag %></span>
+            <span><%= link_to tag.name, tag , style: "font-weight: bold" %></span>
           <% end %>
         </div>
       </div>
 
       <div class="container-sidebar-item">
         <div class="container-sidebar-item-title"><i class="fas fa-archive" style="margin-right: 5px"></i>归档</div>
+        <% @result.each do |row| %>
+          <div style="display: flex; justify-content: space-around; align-items: center; width: 100%">
+            <div style="font-weight: bold">
+              <span><%= row["year"] %></span>
+              <span><%= row["month"] %></span>
+            </div>
+            <div><%= row["count"] %></div>
+          </div>
+        <% end %>
       </div>
 
       <div class="container-sidebar-item">
