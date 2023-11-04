@@ -19,19 +19,27 @@
 
     <div>
       <%= form.label :分类, style: "display: block" %>
-      <%= form.text_field :category_name %>
+      <% if @post.category %>
+        <%= form.text_field :category_name, value: @post.category.name %>
+      <% else %>
+        <%= form.text_field :category_name %>
+      <% end %>
     </div>
 
     <div>
       <%= form.label :标签, style: "display: block" %>
-      <%= form.text_field :tag_names %>
+      <% if @post.tags %>
+        <%= form.text_field :tag_names, value: @post.tags.map(&:name).join(',') %>
+      <% else %>
+        <%= form.text_field :tag_names %>
+      <% end %>
     </div>
 
     <div>
       <%= form.label :创建时间, style: "display: block" %>
       <%= form.datetime_local_field :created_at, { ampm: true } %>
     </div>
-<!--    data-controller="toggles" data-action="click->toggles#closeLayer"-->
+
     <div data-controller="file-upload" data-action="drop->file-upload#upload">
       <%= form.label :内容, style: "display: block" %>
       <%= form.text_area :content, size: "80x20" %>
