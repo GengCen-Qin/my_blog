@@ -109,6 +109,13 @@
     gap: var(--space-xl);
   }
 
+  &_form {
+    padding: 0 var(--space-xl);
+    @include media(tabletAndUp) {
+      margin: 0 auto;
+    }
+  }
+
   &_center {
     @include media(tabletAndUp) {
       margin: 0 auto;
