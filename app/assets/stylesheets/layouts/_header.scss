@@ -53,11 +53,13 @@
         font-size: var(--font-size-xxxl);
         color: var(--color-light);
         padding-bottom: 1rem;
+        font-weight: bold;
       }
 
       & > p {
         font-size: var(--font-size-xl);
         color: var(--color-light);
+        font-weight: bold;
       }
     }
 
