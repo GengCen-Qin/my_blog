@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[edit update new create destroy]
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :set_summary, only: :index
   # GET /posts or /posts.json

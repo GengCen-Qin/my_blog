@@ -5,7 +5,11 @@ ruby "3.2.2"
 
 gem "pagy"
 
+# 全局配置
 gem "config"
+
+# 用户管理
+gem "devise", "~> 4.8.1"
 
 # 日期格式化
 gem 'local_time'

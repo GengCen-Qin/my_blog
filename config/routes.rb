@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'tag/new'
-  get 'welcome/index'
+  devise_for :users
+
   resources :posts
   resources :tag, only: :show
   resources :category, only: :show

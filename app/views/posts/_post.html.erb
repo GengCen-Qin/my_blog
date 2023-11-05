@@ -16,10 +16,11 @@
   </div>
 </div>
 
-<div class="post--action">
-  <%= link_to "编辑", edit_post_path(post), class: "btn btn--primary" %>
-  <%= button_to "删除", post_path(post), method: :delete, class: "btn btn--primary", form: { data: { turbo_confirm: "你想好了没啊?" } } %>
-</div>
-
+<% if user_signed_in? %>
+  <div class="post--action">
+    <%= link_to "编辑", edit_post_path(post), class: "btn btn--primary" %>
+    <%= button_to "删除", post_path(post), method: :delete, class: "btn btn--primary", form: { data: { turbo_confirm: "你想好了没啊?" } } %>
+  </div>
+<% end %>
 
 

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!, unless: :devise_controller?
 
   include Pagy::Backend
   Pagy::DEFAULT[:items] = Settings.default.page_size # items per page
