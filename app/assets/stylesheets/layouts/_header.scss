@@ -18,6 +18,14 @@
       gap: 1rem;
       list-style: none;
     }
+
+    &-item.hidden {
+      display: none;
+
+      @include media(tabletAndUp) {
+        display: block;
+      }
+    }
   }
 
   &-nav:hover {

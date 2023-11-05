@@ -17,14 +17,14 @@
     <h1 class="header-nav-log"><%= link_to "玲辰书斋", posts_path %></h1>
     <ul class="header-nav-menus">
       <li class="header-nav-item"><i class="fas fa-search fa-fw"></i><%= link_to "搜索" %></li>
-      <li class="header-nav-item"><i class="fa-fw fas fa-home"></i><%= link_to "主页" %></li>
-      <li class="header-nav-item"><i class="fa-fw fas fa-tags"></i><%= link_to "标签" %></li>
-      <li class="header-nav-item"><i class="fa-fw fas fa-folder-open"></i><%= link_to "分类" %></li>
-      <li class="header-nav-item"><i class="fa-fw fas fa-heart"></i><%= link_to "关于我" %></li>
+      <li class="header-nav-item hidden"><i class="fa-fw fas fa-home"></i><%= link_to "主页" %></li>
+      <li class="header-nav-item hidden"><i class="fa-fw fas fa-tags"></i><%= link_to "标签" %></li>
+      <li class="header-nav-item hidden"><i class="fa-fw fas fa-folder-open"></i><%= link_to "分类" %></li>
+      <li class="header-nav-item hidden"><i class="fa-fw fas fa-heart"></i><%= link_to "关于我" %></li>
       <% if user_signed_in? %>
         <li class="header-nav-item"><i class="fas fa-plus"></i><%= link_to "新建", new_post_path %></li>
       <% else %>
-        <li class="header-nav-item"><i class="fas fa-plus"></i><%= link_to "登陆", new_user_session_path %></li>
+        <li class="header-nav-item"><i class="fas fa-sign-in-alt"></i><%= link_to "登陆", new_user_session_path %></li>
       <% end %>
     </ul>
   </div>

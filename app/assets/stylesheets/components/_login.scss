@@ -1,0 +1,28 @@
+.login {
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: var(--border-radius);
+    gap: var(--space-xl);
+  }
+
+  &_container form div label {
+    font-weight: bold;
+  }
+
+  &_container form div input {
+    background-color: var(--color-light);
+    border: 0;
+    border-bottom: 2px var(--color-dark) solid;
+  }
+
+  &_title {
+    font-size: var(--font-size-xxxl);
+    font-weight: bold;
+  }
+
+
+}

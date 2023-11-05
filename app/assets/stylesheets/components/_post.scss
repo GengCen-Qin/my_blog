@@ -1,5 +1,4 @@
 .post {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +9,11 @@
   box-shadow: var(--shadow-small);
   padding: var(--space-l);
   margin: 0 var(--space-s);
+
+  @include media(tabletAndUp) {
+    align-items: center;
+    max-width: 1200px;
+  }
 
   &-desc {
     @extend .post;
@@ -105,10 +109,17 @@
     gap: var(--space-xl);
   }
 
+  &_center {
+    @include media(tabletAndUp) {
+      margin: 0 auto;
+    }
+  }
+
   &--action {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-top: var(--space-xl);
   }
 }

@@ -102,8 +102,7 @@
         <% @result.each do |row| %>
           <div style="display: flex; justify-content: space-around; align-items: center; width: 100%">
             <div style="font-weight: bold">
-              <span><%= row["year"] %></span>
-              <span><%= row["month"] %></span>
+              <span><%= row["year"] %>-<%= row["month"] %></span>
             </div>
             <div><%= row["count"] %></div>
           </div>

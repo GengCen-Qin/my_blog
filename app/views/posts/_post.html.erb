@@ -8,13 +8,16 @@
   </p>
 </div>
 
-<div class="post">
-  <div class="post-detail">
-    <p class="post-detail-content">
-      <%= markdown(post.content) %>
-    </p>
+<div class="post_center">
+  <div class="post">
+    <div class="post-detail">
+      <p class="post-detail-content">
+        <%= markdown(post.content) %>
+      </p>
+    </div>
   </div>
 </div>
+
 
 <% if user_signed_in? %>
   <div class="post--action">
