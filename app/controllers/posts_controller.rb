@@ -2,6 +2,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[edit update new create destroy]
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :set_summary, only: :index
+
+  def search()
+    @posts = Post.where("title like ?", "%" + params[:q].to_s + "%")
+    render json: { code: 200, data: @posts }
+  end
+
   # GET /posts or /posts.json
   def index
     @pagy, @records = pagy(Post.all)

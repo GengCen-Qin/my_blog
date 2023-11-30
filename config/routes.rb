@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   root "posts#index"
 
   post "/fileUpload", to: 'application#upload_file'
+
+  post "/post/search", to: 'posts#search'
 end

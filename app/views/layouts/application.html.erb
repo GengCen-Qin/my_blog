@@ -16,7 +16,7 @@
   <div id="header-nav" class="header-nav">
     <h1 class="header-nav-log"><%= link_to "玲辰书斋", posts_path %></h1>
     <ul class="header-nav-menus">
-      <li class="header-nav-item"><i class="fas fa-search fa-fw"></i><%= link_to "搜索" %></li>
+      <li id="search" data-controller="toggles" data-action="click->toggles#searchPost" class="header-nav-item"><i class="fas fa-search fa-fw"></i><a href="#">搜索</a></li>
       <li class="header-nav-item hidden"><i class="fa-fw fas fa-home"></i><%= link_to "主页" %></li>
       <li class="header-nav-item hidden"><i class="fa-fw fas fa-tags"></i><%= link_to "标签" %></li>
       <li class="header-nav-item hidden"><i class="fa-fw fas fa-folder-open"></i><%= link_to "分类" %></li>
@@ -34,4 +34,21 @@
   <h1>Footer</h1>
 </footer>
 </body>
+
+<div id="layer" class="layer">
+  <div id="layer-container" class="layer-container">
+    <div class="layer-title">
+      <h3>检索文章</h3>
+    </div>
+
+    <form id="form">
+      <input type="text" class="input" id="input" placeholder="请输入关键词" autocomplete="off">
+      <ul id="post-search" class="post-search"></ul>
+    </form>
+
+    <button id="closeLayer" class="layer-button" data-controller="toggles" data-action="click->toggles#closeLayer">
+      Close
+    </button>
+  </div>
+</div>
 </html>

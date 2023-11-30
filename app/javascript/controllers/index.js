@@ -9,3 +9,6 @@ application.register("file-upload", FileUploadController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import TogglesController from "./toggles_controller"
+application.register("toggles", TogglesController)

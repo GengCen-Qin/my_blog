@@ -1,4 +1,5 @@
 .post {
+  min-width: 60rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,6 +53,7 @@
     margin-bottom: 20px;
     z-index: -2;
     justify-self: flex-start;
+
     &::before {
       content: '';
       position: absolute;
@@ -128,5 +130,19 @@
     align-items: center;
     justify-content: space-around;
     margin-top: var(--space-xl);
+  }
+
+  &-search {
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    &-li {
+      border-top: 1px solid #e5e5e5;
+      cursor: pointer;
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+    }
   }
 }
