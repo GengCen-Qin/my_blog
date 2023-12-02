@@ -1,5 +1,9 @@
-class TagController < ApplicationController
+class TagsController < ApplicationController
   before_action :set_tag, only: %i[ show ]
+  def index
+    @tags = Tag.all
+  end
+
   def show
     @pagy, @posts = pagy(@tag.posts)
   end

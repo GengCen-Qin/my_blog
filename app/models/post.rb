@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   def check_tag_and_category
     p self.category
-    self.category.delete if (self.category.posts.count == 1)
+    self.category.delete if (self.category && self.category.posts.count == 1)
     self.tags.each { |tag| tag.delete if (tag.posts.count == 1) }
   end
 end

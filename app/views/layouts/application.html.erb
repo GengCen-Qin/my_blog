@@ -17,9 +17,9 @@
     <h1 class="header-nav-log"><%= link_to "玲辰书斋", posts_path %></h1>
     <ul class="header-nav-menus">
       <li id="search" data-controller="toggles" data-action="click->toggles#searchPost" class="header-nav-item"><i class="fas fa-search fa-fw"></i><a href="#">搜索</a></li>
-      <li class="header-nav-item hidden"><i class="fa-fw fas fa-home"></i><%= link_to "主页" %></li>
-      <li class="header-nav-item hidden"><i class="fa-fw fas fa-tags"></i><%= link_to "标签" %></li>
-      <li class="header-nav-item hidden"><i class="fa-fw fas fa-folder-open"></i><%= link_to "分类" %></li>
+      <li class="header-nav-item hidden"><i class="fa-fw fas fa-home"></i><%= link_to "主页", posts_path %></li>
+      <li class="header-nav-item hidden"><i class="fa-fw fas fa-tags"></i><%= link_to "标签", tags_path  %></li>
+      <li class="header-nav-item hidden"><i class="fa-fw fas fa-folder-open"></i><%= link_to "分类", categories_path %></li>
       <li class="header-nav-item hidden"><i class="fa-fw fas fa-heart"></i><%= link_to "关于我" %></li>
       <% if user_signed_in? %>
         <li class="header-nav-item"><i class="fas fa-plus"></i><%= link_to "新建", new_post_path %></li>
