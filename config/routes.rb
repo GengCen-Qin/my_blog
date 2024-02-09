@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'up/show'
   devise_for :users
 
   resources :posts
@@ -13,4 +14,6 @@ Rails.application.routes.draw do
   post "/fileUpload", to: 'application#upload_file'
 
   post "/post/search", to: 'posts#search'
+
+  get "/up", to: 'up#show'
 end
