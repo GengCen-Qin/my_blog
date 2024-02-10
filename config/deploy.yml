@@ -6,7 +6,13 @@ image: qsc_demo/my_blog
 
 # Deploy to these servers.
 servers:
-  - 121.37.186.74
+  web:
+    hosts:
+      - 121.37.186.74
+    options:
+      publish: "3000:3000"
+    traefik: false
+
 
 # Credentials for your image host.
 registry:
