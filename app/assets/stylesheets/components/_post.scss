@@ -19,13 +19,19 @@
   &-desc {
     @extend .post;
     gap: var(--space-xxxs);
+    min-width: 20rem;
     @include media(tabletAndUp) {
     }
   }
 
   &-desc-title {
+    text-align: center;
+    font-weight: bold;
     margin: 0;
-    font-size: var(--font-size-xxl);
+    font-size: var(--font-size-l);
+    @include media(tabletAndUp) {
+      font-size: var(--font-size-xxl);
+    }
   }
 
   &-desc-time {
@@ -71,6 +77,12 @@
     font-size: var(--font-size-xxxl);
     color: var(--color-light);
     padding-bottom: 1rem;
+  }
+
+  &-detail > h1 {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: var(--space-m);
   }
 
   &-detail-time {
